@@ -53,7 +53,7 @@ class Standings(commands.Cog):
         aliases=["table"],
     )
     async def standings(self, ctx: commands.Context):
-        headers = "#   Team        (W/L/D)   Pts"
+        headers = "#   Team        (W/D/L)   Pts"
         embed = discord.Embed(
             color=discord.Color.blue(),
             title="Serie A 25/26 Standings",
