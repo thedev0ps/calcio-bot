@@ -13,7 +13,7 @@ class Avatar(commands.Cog):
         description="Displays the user's profile picture",
         aliases=["av", "pfp"],
     )
-    @app_commands.describe(member="The member whose avatar you want to view")
+    @app_commands.describe(user="The member/user whose avatar you want to view")
     async def avatar(self, ctx: commands.Context, user: Optional[discord.User] = None):
         user = user or ctx.author
         embed = discord.Embed(
