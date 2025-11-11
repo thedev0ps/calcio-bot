@@ -12,7 +12,7 @@ class Lockdown(commands.Cog):
     async def lock(
         self, ctx: commands.Context, channel: Optional[discord.TextChannel] = None
     ):
-        channel = ctx.channel if channel == None else channel
+        channel = channel or ctx.channel
         overwrites = channel.overwrites_for(ctx.guild.default_role)
 
         if overwrites.send_messages:
@@ -28,7 +28,7 @@ class Lockdown(commands.Cog):
     async def unlock(
         self, ctx: commands.Context, channel: Optional[discord.TextChannel] = None
     ):
-        channel = ctx.channel if channel == None else channel
+        channel = channel or ctx.channel
         overwrites = channel.overwrites_for(ctx.guild.default_role)
 
         if not overwrites.send_messages:
