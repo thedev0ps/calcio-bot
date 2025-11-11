@@ -61,6 +61,9 @@ class Standings(commands.Cog):
             title="Serie A 25/26 Standings",
             description=f"```{headers}\n{standings}```",
         )
+        embed.set_footer(
+            f"Requested by {ctx.author.display_name} • Provided by CalcioBot"
+        )
         await ctx.reply(
             embed=embed,
             mention_author=False,
