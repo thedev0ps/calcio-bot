@@ -4,4 +4,4 @@ services:
     container_name: serie-a-bot
     env_file: .env
     restart: unless-stopped
-    command: python src/main.py
+    command: python -u src/main.py
