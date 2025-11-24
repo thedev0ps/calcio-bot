@@ -10,7 +10,9 @@ class Player(commands.Cog):
         self.season = "25/26"
         self.BASE_URL = "https://tmkt-api-production.up.railway.app"
         self.BASE_TM_URL = "https://www.transfermarkt.com/player/profil/spieler"
-        self.session = aiohttp.ClientSession()
+        self.session = aiohttp.ClientSession(
+            connector=aiohttp.TCPConnector(force_close=True)
+        )
 
     async def get_player_id(self, player: str):
         url = f"{self.BASE_URL}/players/search?query={player}"
