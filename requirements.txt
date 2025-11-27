@@ -4,8 +4,9 @@ aiosignal==1.4.0
 anyio==4.11.0
 attrs==25.4.0
 audioop-lts==0.2.2
-certifi==2025.10.5
+certifi==2025.11.12
 discord.py==2.6.4
+fotmob-wrapper==0.0.5
 frozenlist==1.8.0
 googletrans==4.0.2
 h11==0.16.0
