@@ -4,7 +4,7 @@ from typing import Optional
 
 
 class Say(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
 
     @commands.hybrid_command(name="say", description="Send a message through the bot")

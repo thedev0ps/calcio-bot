@@ -5,7 +5,7 @@ import os
 
 
 class Player(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         self.season = "25/26"
         self.BASE_URL = "https://tmkt-api-production.up.railway.app"
