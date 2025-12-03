@@ -14,7 +14,7 @@ class Translate(commands.Cog):
         aliases=["tr"],
     )
     async def translate(self, ctx: commands.Context, *, text: Optional[str] = None):
-        if not text.strip() and not ctx.message.reference:
+        if not text and not ctx.message.reference:
             return await ctx.reply(
                 "Please provide some text or a message", mention_author=False
             )
