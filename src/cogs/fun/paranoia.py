@@ -8,7 +8,7 @@ class Paranoia(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    async def fetch_wyr(self, rating) -> str:
+    async def fetch_paranoia(self, rating) -> str:
         async with aiohttp.ClientSession() as session:
             async with session.get(
                 f"https://api.truthordarebot.xyz/v1/paranoia?rating={rating}"
@@ -29,7 +29,7 @@ class Paranoia(commands.Cog):
                 mention_author=False,
             )
 
-        question = await self.fetch_wyr(rating)
+        question = await self.fetch_paranoia(rating)
 
         await ctx.reply(question, mention_author=False)
 
