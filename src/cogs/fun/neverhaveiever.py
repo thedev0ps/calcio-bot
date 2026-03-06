@@ -7,7 +7,7 @@ import aiohttp
 class NeverHaveIEver(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-        self.active_nhie_messages = set()  # Track WYR message IDs
+        self.active_nhie_messages = set()
 
     async def fetch_wyr(self, rating) -> str:
         async with aiohttp.ClientSession() as session:
@@ -89,7 +89,6 @@ class NeverHaveIEver(commands.Cog):
 
         bar = self.generate_bar(i_have_votes, i_havent_votes)
 
-        # Exact same spacing logic as your original code
         left_text = f"{i_have_percent}%"
         right_text = f"{i_havent_percent}%"
         total_width = 50
@@ -97,15 +96,12 @@ class NeverHaveIEver(commands.Cog):
         if spacing < 1:
             spacing = 1
 
-        # Plain text percentage line
         percent_line = f"{left_text}{' ' * spacing}{right_text}"
 
         embed = message.embeds[0]
 
-        # This identifies the Question and throws away the old numbers/bar
         question_part = embed.description.split("\n\n")[0]
 
-        # Rebuilds the description with only the current stats
         embed.description = f"{question_part}\n\n{percent_line}\n{bar}"
 
         await message.edit(embed=embed)

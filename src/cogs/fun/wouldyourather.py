@@ -7,7 +7,7 @@ import aiohttp
 class WouldYouRather(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-        self.active_wyr_messages = set()  # Track WYR message IDs
+        self.active_wyr_messages = set()
 
     async def fetch_wyr(self, rating) -> str:
         async with aiohttp.ClientSession() as session:
@@ -95,11 +95,10 @@ OR
 
         bar = self.generate_bar(blue_votes, red_votes)
 
-        # Dynamic spacing to push right percentage far right
         left_text = f"{blue_percent}%"
         right_text = f"{red_percent}%"
 
-        total_width = 60  # controls how far apart they are
+        total_width = 60
         spacing = total_width - len(left_text) - len(right_text)
         if spacing < 1:
             spacing = 1
